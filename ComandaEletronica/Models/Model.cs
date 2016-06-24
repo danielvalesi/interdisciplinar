@@ -14,7 +14,7 @@ namespace ComandaEletronica.Models
         public Model()
         {
             string strConn = @"Data Source = localhost;
-                Initial Catalog = cardapioDigital2;
+                Initial Catalog = cardapioDigital;
                 Integrated Security = true";
             conn = new SqlConnection(strConn);
             conn.Open();

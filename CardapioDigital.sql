@@ -111,13 +111,6 @@ AS
         LEFT JOIN Funcionarios ON Funcionarios.pessoa_id = Pessoas.pessoa_id
         LEFT JOIN ClientesVIP ON ClientesVIP.pessoa_id = Pessoas.pessoa_id
 GO
--- Criar até aqui
-
-
-
-
-
-
 CREATE PROCEDURE cadCliente
 (
 	@nome					varchar(50),
@@ -165,6 +158,22 @@ begin
 	INSERT INTO Funcionarios VALUES (@Id, @cargo, @salario, @horarioEntrada, @horarioSaida)
 end
 --cadCliente 'Gustavo', 'gustavo@email.com', 'senha', '123.123.123-12', null, 0.02
+
+-- Criar até aqui
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CREATE PROCEDURE alterCliente
 (
 	@pessoa_id				int,
