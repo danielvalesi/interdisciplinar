@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Template.cshtml";
+}
+
+<div class="container">
+    <h2>Editar Funcionario</h2>
+    <form action="/funcionario/update" method="post">
+
+        <input type="hidden" name="idFuncionario" value="@Model.IdFuncionario" />
+
+        <div class="input-field col s6">
+            <input id="nome" type="text" name="nome" class="validate" value="@Model.Nome">
+            <label for="nome">Nome</label>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="descricao" class="materialize-textarea" name="descricao">@Model.Descricao</textarea>
+                <label for="descricao">Descrição</label>
+            </div>
+        </div>
+
+
+        <div class="input-field col s6">
+            <input id="preco" type="text" name="preco" class="validate" value="@Model.Preco">
+            <label for="preco">Preço</label>
+        </div>
+        <!-- Fazer depois -->
+        <div class="input-field col s6">
+            <select name="categoria">
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="1">Funcionario Pronto</option>
+                <option value="2">Funcionario à Produzir</option>
+            </select>
+            <label>Categoria</label>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+            ATUALIZAR
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+
+</div>

@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Template.cshtml";
+}
+
+
+<div class="container">
+    <h2>Cadastrar Cliente</h2>
+    <form action="/cliente/create" method="post">
+
+        <div class="row">
+            <div class="input-field col s4">
+                <input id="nome" type="text" name="nome" class="validate">
+                <label for="nome">Nome</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="preco" type="text" name="preco" class="validate">
+                <label for="preco">Preço</label>
+            </div>
+            <div class="input-field col s4">
+                <select name="categoria">
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="1">Produto Pronto</option>
+                    <option value="2">Produto à Produzir</option>
+                </select>
+                <label>Categoria</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="descricao" class="materialize-textarea" name="descricao"></textarea>
+                <label for="descricao">Descrição</label>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+            CADASTRAR
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+
+</div>
+
+

@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Template.cshtml";
+}
+
+<div class="container">
+    <!-- Basic Setup -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                LOCALIZAÇÕES
+                <a href="/localizacao/create" class="btn btn-success">CADASTRAR</a>
+            </h3>
+
+            <div class="panel-options">
+                <a href="#" data-toggle="panel">
+                    <span class="collapse-icon">&ndash;</span>
+                    <span class="expand-icon">+</span>
+                </a>
+                <a href="#" data-toggle="remove">
+                    &times;
+                </a>
+            </div>
+        </div>
+        <div class="panel-body">
+
+            <script type="text/javascript">
+            jQuery(document).ready(function($)
+            {
+                $("#example-1").dataTable({
+                    aLengthMenu: [
+                        [10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]
+                    ]
+                });
+            });
+            </script>
+
+            <table id="example-1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Lugares</th>
+                        <th>Descrição</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var localizacao in Model)
+                    {
+                        <tr>
+                            <td>@localizacao.Numero</td>
+                            <td>@localizacao.QtdLugares</td>
+                            <td>@localizacao.Descricao</td>
+                            <td>@localizacao.Status</td>
+                            <td>
+                                <a href="/localizacao/update/@localizacao.Numero" class="btn btn-xs btn-default">
+                                    <span class="glyphicon glyphicon-edit"></span> Editar
+                                </a>
+                                <a href="/localizacao/delete/@localizacao.Numero" class="btn btn-xs btn-danger">
+                                    <span class="glyphicon glyphicon-trash"></span> Apagar
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>

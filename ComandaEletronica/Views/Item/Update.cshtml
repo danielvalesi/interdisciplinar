@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Template.cshtml";
+}
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">CADASTRAR ITEMS</h3>
+            <div class="panel-options">
+                <a href="#" data-toggle="panel">
+                    <span class="collapse-icon">–</span>
+                    <span class="expand-icon">+</span>
+                </a>
+                <a href="#" data-toggle="remove">
+                    ×
+                </a>
+            </div>
+        </div>
+        <div class="panel-body">
+            <form action="/item/update" method="post" enctype="multipart/form-data" class="form-horizontal">
+
+                <input type="hidden" name="id" value="@Model.Id" />
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="produto_id">Produto Id</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="produto_id" name="produto_id">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="funcionario_id">Funcionario Id</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="funcionario_id" name="funcionario_id">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="pedido_id">Pedido Id</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="pedido_id" name="pedido_id">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="qtd">QTD</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="qtd" name="qtd">
+                    </div>
+                </div>
+
+                <div class="form-group-separator"></div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="preco">Preco</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="preco" name="preco">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="dataEntrega">Data da Entrega</label>
+                    <div class="col-sm-10">
+                        <input type="datetime-local" class="form-control" id="dataEntrega" name="dataEntrega" value="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Status do item</label>
+                    <div class="col-sm-10">
+                        <select name="status" class="form-control">
+                            <option value="" disabled selected>Selecione uma opção</option>
+                            <option value="1">Em Produção</option>
+                            <option value="2">Entregue</option>
+                            <option value="3">Cancelado</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+
+
+                <div class="form-group">
+                    <button type="reset" class="btn btn-gray btn-single">CANCELAR</button>
+                    <button type="submit" class="btn btn-info btn-single pull-right">CADASTRAR</button>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+

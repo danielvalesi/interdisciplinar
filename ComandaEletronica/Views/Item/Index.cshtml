@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Template.cshtml";
+}
+
+<div class="container">
+    <!-- Basic Setup -->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+
+                ITENS
+
+                <a href="/item/create" class="btn btn-success">CADASTRAR</a>
+
+            </h3>
+
+            <div class="panel-options">
+                <a href="#" data-toggle="panel">
+                    <span class="collapse-icon">&ndash;</span>
+                    <span class="expand-icon">+</span>
+                </a>
+                <a href="#" data-toggle="remove">
+                    &times;
+                </a>
+            </div>
+        </div>
+        <div class="panel-body">
+
+            <script type="text/javascript">
+            jQuery(document).ready(function($)
+            {
+                $("#example-1").dataTable({
+                    aLengthMenu: [
+                        [10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]
+                    ]
+                });
+            });
+            </script>
+
+            <table id="example-1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Prod ID</th>
+                        <th>Func Id</th>
+                        <th>Ped Id</th>
+                        <th>Qtd</th>
+                        <th>Preco</th>
+                        <th>DataEntrega</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Produto_Id</td>
+                            <td>@item.Funcionario_Id</td>
+                            <td>@item.Pedido_Id</td>
+                            <td>@item.Qtd</td>
+                            <td>@item.Preco</td>
+                            <td>@item.DataEntrega</td>
+                            <td>@item.Status</td>
+                            <td>
+                                <a href="/item/update/@item.Produto_Id" class="btn btn-xs btn-default">
+                                    <span class="glyphicon glyphicon-edit"></span> Editar
+                                </a>
+                                <a href="/item/delete/@item.Produto_Id" class="btn btn-xs btn-danger">
+                                    <span class="glyphicon glyphicon-trash"></span> Apagar
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>

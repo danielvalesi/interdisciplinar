@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Template.cshtml";
+}
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">CADASTRAR PEDIDOS</h3>
+            <div class="panel-options">
+                <a href="#" data-toggle="panel">
+                    <span class="collapse-icon">–</span>
+                    <span class="expand-icon">+</span>
+                </a>
+                <a href="#" data-toggle="remove">
+                    ×
+                </a>
+            </div>
+        </div>
+        <div class="panel-body">
+            <form action="/pedido/update" method="post" enctype="multipart/form-data" class="form-horizontal">
+
+                <input type="hidden" name="id" value="@Model.Id" />
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="conta_id">Conta Id</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="conta_id" name="conta_id" value="@Model.Conta_id">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Status do Pedido</label>
+                    <div class="col-sm-10">
+                        <select name="status" class="form-control">
+                            <option value="" disabled selected>Selecione uma opção</option>
+                            <option value="1">Em Produção</option>
+                            <option value="2">Entregue</option>
+                            <option value="3">Cancelado</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="dataEntrega">Data da Entrega</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="dataEntrega" name="dataEntrega" value="@Model.DataEntrega">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="reset" class="btn btn-gray btn-single">CANCELAR</button>
+                    <button type="submit" class="btn btn-info btn-single pull-right">CADASTRAR</button>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,20 @@
+/**
+ *
+ * Apply your custom CSS here
+ *
+*/
+
+body {	
+}
+
+a {
+}
+
+.sidebar-menu {
+	width: 240px;
+}
+
+.sidebar-menu .main-menu {
+	padding-left: 30px;
+	padding-right: 30px;
+}
