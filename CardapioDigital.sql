@@ -111,6 +111,12 @@ AS
         LEFT JOIN Funcionarios ON Funcionarios.pessoa_id = Pessoas.pessoa_id
         LEFT JOIN ClientesVIP ON ClientesVIP.pessoa_id = Pessoas.pessoa_id
 GO
+-- Criar até aqui
+
+
+
+
+
 
 CREATE PROCEDURE cadCliente
 (
