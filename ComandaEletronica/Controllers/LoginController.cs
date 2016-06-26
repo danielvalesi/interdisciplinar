@@ -26,7 +26,9 @@ namespace ComandaEletronica.Controllers
 
                 if (p == null)
                 {
+                    ViewBag.Mensagem = "Email ou senha incorretas";
                     return RedirectToAction("index");
+                   
                 }
                 else
                 {
@@ -35,14 +37,14 @@ namespace ComandaEletronica.Controllers
 
                     if (p is Funcionario)
                     {
-
-                        return RedirectToAction("index", "dashboard");
+                        
+                        return RedirectToAction("index", "Dashboard");
                     }
                     else
                     {
                         Session["carrinho"] = new Conta();
 
-                        return RedirectToAction("cliente", "Dashboard");
+                        return RedirectToAction("Cliente", "Dashboard");
                     }
 
 

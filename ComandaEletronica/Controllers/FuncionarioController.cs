@@ -47,6 +47,11 @@ namespace ComandaEletronica.Controllers
             e.Nome = form["nome"];
             e.Email = form["email"];
             e.Senha = form["senha"];
+            e.Cpf = form["cpf"];
+            e.Cargo = form["cargo"];
+            e.Salario = decimal.Parse(form["salario"]);
+            e.HorarioEntrada = DateTime.Parse(form["horarioEntrada"]);
+            e.HorarioSaida = DateTime.Parse(form["horarioSaida"]);
 
 
 
@@ -76,7 +81,11 @@ namespace ComandaEletronica.Controllers
             e.Nome = form["nome"];
             e.Email = form["email"];
             e.Senha = form["senha"];
-
+            e.Cpf = form["cpf"];
+            e.Cargo = form["cargo"];
+            e.Salario = decimal.Parse(form["salario"]);
+            e.HorarioEntrada = DateTime.Parse(form["horarioEntrada"]);
+            e.HorarioSaida = DateTime.Parse(form["horarioSaida"]);
 
             e.Id = int.Parse(form["pessoa_id"]);
 

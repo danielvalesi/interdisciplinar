@@ -12,11 +12,13 @@
 
                 PRODUTOS
 
-                <a href="/produto/create" class="btn btn-success">CADASTRAR</a>
+                
 
             </h3>
 
-            <div class="panel-options">
+            <a href="/produto/create" class="btn btn-success pull-right">CADASTRAR</a>
+
+            <!--div-- class="panel-options">
                 <a href="#" data-toggle="panel">
                     <span class="collapse-icon">&ndash;</span>
                     <span class="expand-icon">+</span>
@@ -24,7 +26,7 @@
                 <a href="#" data-toggle="remove">
                     &times;
                 </a>
-            </div>
+            </!--div-->
         </div>
         <div class="panel-body">
 
@@ -38,59 +40,62 @@
                 });
             </script>
 
-            <table id="example-1" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
-                        <th style="min-width: 25px;">ID</th>
-                        <th style="min-width: 100px;">Nome</th>
-                        <th style="min-width: 50px;">Preço</th>
-                        <th style="min-width: 25px;">Descrição</th>
-                        <th style="min-width: 80px;">Categoria</th>
-                        <th style="min-width: 80px;">Imagem</th>
-                        <th style="min-width: 100px;">Tempo de Preparo</th>
-                        <th style="min-width: 80px;">Estoque</th>
-                        <th style="min-width: 25px;">Ações</th>
-                    </tr>
-                </thead>
-
-                <!--tfoot>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Preço</th>
-                        <th>Descrição</th>
-                        <th>Categoria</th>
-                        <th>Imagem</th>
-                        <th>Tempo de Preparo</th>
-                        <th>Estoque</th>
-                        <th>Ações</th>
-                    </tr>
-                </tfoot-->
-
-                <tbody>
-                    @foreach (var produto in Model)
-                    {
+            <div class="table-responsive">
+                <table id="example-1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead>
                         <tr>
-                            <td>@produto.Id</td>
-                            <td>@produto.Nome</td>
-                            <td>@produto.Preco</td>
-                            <td>@produto.Descricao</td>
-                            <td>@produto.Categoria</td>
-                            <td><img src="@produto.Imagem" class="img-responsive" width="80"></td>
-                            <td>@produto.TempoPreparo</td>
-                            <td>@produto.Estoque</td>
-                            <td>
-                                <a href="/produto/update/@produto.Id" class="btn btn-xs btn-default">
-                                    <span class="glyphicon glyphicon-edit"></span> Editar
-                                </a>
-                                <a href="/produto/delete/@produto.Id" class="btn btn-xs btn-danger">
-                                    <span class="glyphicon glyphicon-trash"></span> Apagar
-                                </a>
-                            </td>
+                            <th style="min-width: 25px;">ID</th>
+                            <th style="min-width: 100px;">Nome</th>
+                            <th style="min-width: 50px;">Preço</th>
+                            <th style="min-width: 25px;">Descrição</th>
+                            <th style="min-width: 80px;">Categoria</th>
+                            <th style="min-width: 80px;">Imagem</th>
+                            <th style="min-width: 100px;">Tempo de Preparo</th>
+                            <th style="min-width: 80px;">Estoque</th>
+                            <th style="min-width: 25px;">Ações</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
+                    </thead>
+
+                    <!--tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Descrição</th>
+                    <th>Categoria</th>
+                    <th>Imagem</th>
+                    <th>Tempo de Preparo</th>
+                    <th>Estoque</th>
+                    <th>Ações</th>
+                </tr>
+            </tfoot-->
+
+                    <tbody>
+                        @foreach (var produto in Model)
+                        {
+                            <tr>
+                                <td>@produto.Id</td>
+                                <td>@produto.Nome</td>
+                                <td>@produto.Preco</td>
+                                <td style="min-width: 80px;">@produto.Descricao</td>
+                                <td>@produto.Categoria</td>
+                                <td><img src="@produto.Imagem" class="img-responsive" width="80"></td>
+                                <td>@produto.TempoPreparo</td>
+                                <td>@produto.Estoque</td>
+                                <td>
+                                    <a href="/produto/update/@produto.Id" class="btn btn-block btn-info">
+                                        <span class="glyphicon glyphicon-edit"></span> Editar
+                                    </a>
+                                    <a href="/produto/delete/@produto.Id" class="btn btn-block btn-danger">
+                                        <span class="glyphicon glyphicon-trash"></span> Apagar
+                                    </a>
+                                </td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>  
 
         </div>
     </div>

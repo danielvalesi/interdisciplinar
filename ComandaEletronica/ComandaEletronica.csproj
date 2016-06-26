@@ -211,6 +211,7 @@
     </Content>
     <Content Include="Views\Shared\_Template.cshtml" />
     <Content Include="scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Shared\_Cliente.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

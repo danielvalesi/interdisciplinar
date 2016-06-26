@@ -25,8 +25,8 @@ namespace ComandaEletronica.Models
 
             cmd.Parameters.AddWithValue("@localizacao_id", e.Localizacao_id);
             cmd.Parameters.AddWithValue("@cliente_id", e.Cliente_id);
-            cmd.Parameters.AddWithValue("@dataAbertura", e.DataAbertura);
-            cmd.Parameters.AddWithValue("@dataFechamento", e.DataFechamento);
+            cmd.Parameters.AddWithValue("@dataAbertura", "getDate()" /* e.DataAbertura*/);
+            cmd.Parameters.AddWithValue("@dataFechamento", "getDate()" /*e.DataFechamento*/);
             cmd.Parameters.AddWithValue("@valor", e.Valor);
             cmd.Parameters.AddWithValue("@status", e.Status);
             cmd.Parameters.AddWithValue("@formaPagamento", e.FormaPagamento);

@@ -46,7 +46,9 @@ namespace ComandaEletronica.Controllers
             Cliente e = new Cliente();
             e.Nome = form["nome"];
             e.Email = form["email"];
+            e.Senha = form["senha"];
             e.Cpf = form["cpf"];
+            e.PorcentagemDesconto = decimal.Parse(form["porcentagemDesconto"]);
 
 
 
@@ -75,7 +77,9 @@ namespace ComandaEletronica.Controllers
             Cliente e = new Cliente();
             e.Nome = form["nome"];
             e.Email = form["email"];
+            e.Senha = form["senha"];
             e.Cpf = form["cpf"];
+            e.PorcentagemDesconto = decimal.Parse(form["porcentagemDesconto"]);
 
 
             e.Id = int.Parse(form["pessoa_id"]);

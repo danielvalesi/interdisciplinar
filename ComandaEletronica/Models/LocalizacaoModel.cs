@@ -132,6 +132,7 @@ namespace ComandaEletronica.Models
             cmd.Parameters.AddWithValue("@qtdLugares", e.QtdLugares);
             cmd.Parameters.AddWithValue("@descricao", e.Descricao);
             cmd.Parameters.AddWithValue("@status", e.Status);
+            cmd.Parameters.AddWithValue("@numero", e.Numero);
 
             cmd.ExecuteNonQuery();
 

@@ -1,45 +1,92 @@
 ﻿
+
 @{
     ViewBag.Title = "Update";
     Layout = "~/Views/Shared/_Template.cshtml";
 }
 
 <div class="container">
-    <h2>Editar Funcionario</h2>
-    <form action="/funcionario/update" method="post">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">ATUALIZAR FUNCIONÁRIO</h3>
 
-        <input type="hidden" name="idFuncionario" value="@Model.IdFuncionario" />
-
-        <div class="input-field col s6">
-            <input id="nome" type="text" name="nome" class="validate" value="@Model.Nome">
-            <label for="nome">Nome</label>
         </div>
+        <div class="panel-body">
+            <input type="hidden" name="idFuncionario" value="@Model.Id" />
+            <form action="/funcionario/update" method="post" enctype="multipart/form-data" class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="nome">Nome</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="nome" name="nome" value="@Model.Nome">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
 
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea id="descricao" class="materialize-textarea" name="descricao">@Model.Descricao</textarea>
-                <label for="descricao">Descrição</label>
-            </div>
-        </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="senha">Senha</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="senha" name="senha" value="@Model.Senha">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="cpf">CPF</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="cpf" name="cpf" value="@Model.Cpf">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="email">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="email" name="email" value="@Model.Email">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="cpf">Cargo</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="cargo" name="cargo" value="@Model.Cargo">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="cpf">Salário</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="salario" name="salario" value="@Model.Salario">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="horaEntrada">Hora Entrada</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="horaEntrada" name="horaEntrada" value="@Model.HorarioEntrada">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="horaSaida">Hora Saída</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="horaSaida" name="horaSaida" value="@Model.HorarioSaida">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
 
 
-        <div class="input-field col s6">
-            <input id="preco" type="text" name="preco" class="validate" value="@Model.Preco">
-            <label for="preco">Preço</label>
+                <div class="form-group">
+                    <button type="reset" class="btn btn-gray btn-single">CANCELAR</button>
+                    <button type="submit" class="btn btn-info btn-single pull-right">ATUALIZAR</button>
+                </div>
+
+            </form>
         </div>
-        <!-- Fazer depois -->
-        <div class="input-field col s6">
-            <select name="categoria">
-                <option value="" disabled selected>Selecione uma opção</option>
-                <option value="1">Funcionario Pronto</option>
-                <option value="2">Funcionario à Produzir</option>
-            </select>
-            <label>Categoria</label>
-        </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">
-            ATUALIZAR
-            <i class="material-icons right">send</i>
-        </button>
-    </form>
+    </div>
+
 
 </div>

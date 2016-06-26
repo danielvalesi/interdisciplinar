@@ -7,7 +7,7 @@
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">CADASTRAR PRODUTO</h3>
+            <h3 class="panel-title">ATUALIZAR MEAS</h3>
             <div class="panel-options">
                 <a href="#" data-toggle="panel">
                     <span class="collapse-icon">–</span>
@@ -19,9 +19,9 @@
             </div>
         </div>
         <div class="panel-body">
-            <form action="/produto/update" method="post" enctype="multipart/form-data" class="form-horizontal">
+            <form action="/localizacao/update" method="post" enctype="multipart/form-data" class="form-horizontal">
 
-                <input type="hidden" name="id" value="@Model.Numero" />
+                <input type="hidden" name="id" value="@Model.id" />
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="qtdLugares">Quantidade de Lugares</label>

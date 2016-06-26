@@ -14,6 +14,8 @@ namespace ComandaEletronica.Entity
 
         public string Cargo { get; set; }
 
+        public decimal Salario { get; set; }
+
         public DateTime HorarioEntrada { get; set; }
 
         public DateTime HorarioSaida { get; set; }

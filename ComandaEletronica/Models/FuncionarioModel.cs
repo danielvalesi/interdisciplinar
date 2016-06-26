@@ -22,9 +22,9 @@ namespace ComandaEletronica.Models
                     VALUES
                     (@nome, @email, @senha, @cpf)
                     INSERT INTO Funcionarios
-                    (pessoa_id, cargo, horarioEntrada, horarioSaida)
+                    (pessoa_id, cargo, salario, horarioEntrada, horarioSaida)
                     VALUES
-                    (@@IDENTITY, @cargo, @horarioEntrada, @horarioSaida)
+                    (@@IDENTITY, @cargo, @salario, @horarioEntrada, @horarioSaida)
             ";
 
             cmd.Parameters.AddWithValue("@nome", f.Nome);
@@ -32,6 +32,7 @@ namespace ComandaEletronica.Models
             cmd.Parameters.AddWithValue("@senha", f.Senha);
             cmd.Parameters.AddWithValue("@cpf", f.Cpf);
             cmd.Parameters.AddWithValue("@cargo", f.Cargo);
+            cmd.Parameters.AddWithValue("@salario", f.Salario);
             cmd.Parameters.AddWithValue("@horarioEntrada", f.HorarioEntrada);
             cmd.Parameters.AddWithValue("@horarioSaida", f.HorarioSaida);
 
@@ -48,7 +49,7 @@ namespace ComandaEletronica.Models
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
-            cmd.CommandText = @" SELECT p.id, p.nome, p.email, p.senha, p.cpf, f.cargo, f.horarioEntrada, f.horarioSaida
+            cmd.CommandText = @" SELECT p.id, p.nome, p.email, p.senha, p.cpf, f.cargo, f.salario, f.horarioEntrada, f.horarioSaida
                                 FROM Pessoas p, Funcionarios f
                                 WHERE p.id = f.pessoa_id";
 
@@ -66,6 +67,7 @@ namespace ComandaEletronica.Models
                 f.Senha = (string)reader["Senha"];
                 f.Cpf = (string)reader["Cpf"];
                 f.Cargo = (string)reader["Cargo"];
+                f.Salario = (Decimal)reader["Salario"];
                 f.HorarioEntrada = (DateTime)reader["HorarioEntrada"];
                 f.HorarioSaida = (DateTime)reader["HorarioSaida"];
 
@@ -100,6 +102,7 @@ namespace ComandaEletronica.Models
                 f.Senha = (string)reader["Senha"];
                 f.Cpf = (string)reader["Cpf"];
                 f.Cargo = (string)reader["Cargo"];
+                f.Salario = (decimal)reader["Salario"];
                 f.HorarioEntrada = (DateTime)reader["HorarioEntrada"];
                 f.HorarioSaida = (DateTime)reader["HorarioSaida"];
 
@@ -114,15 +117,15 @@ namespace ComandaEletronica.Models
 
         // BUSCA POR ID
 
-        internal Funcionario Read(int idFuncionario)
+        internal Funcionario Read(int pessoa_id)
         {
             Funcionario funcionario = new Funcionario();
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = @"select * from Funcionarios where pessoa_id = @pessoa_id";
+            cmd.CommandText = @"select * from Funcionarios, Pessoas  where pessoa_id = @pessoa_id";
             cmd.Connection = conn;
 
-            cmd.Parameters.AddWithValue("@pessoa_id", idFuncionario);
+            cmd.Parameters.AddWithValue("@pessoa_id", pessoa_id);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -145,7 +148,7 @@ namespace ComandaEletronica.Models
             cmd.Connection = conn;
             cmd.CommandText = @"
                     UPDATE Funcionarios set
-                    Nome = @nome, Email = @email, Senha = @senha
+                    Nome = @nome, Email = @email, Senha = @senha, Cpf = @cpf, Cargo = @cargo, Salario = @salario, HorarioEntrada = @horarioEntrada, HorarioSaida = @horarioSaida
                     WHERE
                     id = @id;
             ";
@@ -153,6 +156,11 @@ namespace ComandaEletronica.Models
             cmd.Parameters.AddWithValue("@nome", e.Nome);
             cmd.Parameters.AddWithValue("@email", e.Email);
             cmd.Parameters.AddWithValue("@senha", e.Senha);
+            cmd.Parameters.AddWithValue("@cpf", e.Cpf);
+            cmd.Parameters.AddWithValue("@cargo", e.Cargo);
+            cmd.Parameters.AddWithValue("@salario", e.Salario);
+            cmd.Parameters.AddWithValue("@horarioEntrada", e.HorarioEntrada);
+            cmd.Parameters.AddWithValue("@horarioSaida", e.HorarioSaida);
 
             cmd.ExecuteNonQuery();
         }

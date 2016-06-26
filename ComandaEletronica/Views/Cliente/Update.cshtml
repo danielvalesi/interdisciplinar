@@ -44,3 +44,89 @@
     </form>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Template.cshtml";
+}
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">ATUALIZAR CLIENTE</h3>
+
+        </div>
+        <div class="panel-body">
+            <input type="hidden" name="idCliente" value="@Model.Pessoa_id" />
+            <form action="/cliente/update" method="post" enctype="multipart/form-data" class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="nome">Nome</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="nome" name="nome" value="@Model.Nome" >
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="email">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="email" name="email" value="@Model.Email">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="senha">Senha</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="senha" name="senha" value="@Model.Nome">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="cpf">CPF</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="cpf" name="cpf" value="@Model.Cpf">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+
+                
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="porcentagemDesconto">% Desconto</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="porcentagemDesconto" name="porcentagemDesconto" value="@Model.PorcentagemDesconto">
+                    </div>
+                </div>
+                <div class="form-group-separator"></div>
+
+            
+
+
+                <div class="form-group">
+                    <button type="reset" class="btn btn-gray btn-single">CANCELAR</button>
+                    <button type="submit" class="btn btn-info btn-single pull-right">ATUALIZAR</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+</div>

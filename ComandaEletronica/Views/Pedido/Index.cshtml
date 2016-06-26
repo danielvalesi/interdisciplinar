@@ -12,19 +12,13 @@
 
                 PEDIDOS
 
-                <a href="/pedido/create" class="btn btn-success">CADASTRAR</a>
+                
 
             </h3>
+            
+            <a href="/pedido/create" class="btn btn-success pull-right">CADASTRAR</a>
 
-            <div class="panel-options">
-                <a href="#" data-toggle="panel">
-                    <span class="collapse-icon">&ndash;</span>
-                    <span class="expand-icon">+</span>
-                </a>
-                <a href="#" data-toggle="remove">
-                    &times;
-                </a>
-            </div>
+
         </div>
         <div class="panel-body">
 
@@ -60,10 +54,10 @@
                             <td>@pedido.Status</td>
                             <td>@pedido.DataEntrega</td>
                             <td>
-                                <a href="/pedido/update/@pedido.Id" class="btn btn-xs btn-default">
+                                <a href="/pedido/update/@pedido.Id" class="btn btn-info">
                                     <span class="glyphicon glyphicon-edit"></span> Editar
                                 </a>
-                                <a href="/pedido/delete/@pedido.Id" class="btn btn-xs btn-danger">
+                                <a href="/pedido/delete/@pedido.Id" class="btn btn-danger">
                                     <span class="glyphicon glyphicon-trash"></span> Apagar
                                 </a>
                             </td>

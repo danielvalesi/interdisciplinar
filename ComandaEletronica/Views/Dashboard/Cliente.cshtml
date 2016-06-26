@@ -1,129 +1,77 @@
 ﻿@model IEnumerable<ComandaEletronica.Entity.Produto>
-    @{
-        ViewBag.Title = "Cliente";
-        Layout = "~/Views/Shared/_Template.cshtml";
-    }
+@{
+    ViewBag.Title = "Cliente";
+    Layout = "~/Views/Shared/_Cliente.cshtml";
+}
 
-  <div class="container">
-    <h2>View do Cliente</h2>
-
+<div class="container">
 
 
     <div class="row">
         <div class="row">
             <div class="col-sm-12">
-                <table id="example-1" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                    <thead>
-                        <tr>
-                            <th style="min-width: 25px;">ID</th>
-                            <th style="min-width: 100px;">Nome</th>
-                            <th style="min-width: 50px;">Preço</th>
-                            <th style="min-width: 25px;">Descrição</th>
-                            <th style="min-width: 80px;">Categoria</th>
-                            <th style="min-width: 80px;">Imagem</th>
-                            <th style="min-width: 100px;">Tempo de Preparo</th>
-                            <th style="min-width: 80px;">Estoque</th>
-                            <th style="min-width: 25px;">Ações</th>
-                        </tr>
-                    </thead>
-                    <!--tfoot>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Preço</th>
-                            <th>Descrição</th>
-                            <th>Categoria</th>
-                            <th>Imagem</th>
-                            <th>Tempo de Preparo</th>
-                            <th>Estoque</th>
-                            <th>Ações</th>
-                        </tr>
-                    </tfoot-->
-                    <tbody>
-                        @foreach (var produto in Model)
-                        {
-                            <tr>
-                                <td>@produto.Id</td>
-                                <td>@produto.Nome</td>
-                                <td>@produto.Preco</td>
-                                <td>@produto.Descricao</td>
-                                <td>@produto.Categoria</td>
-                                <td><img src="@produto.Imagem" class="img-responsive" width="80"></td>
-                                <td>@produto.TempoPreparo</td>
-                                <td>@produto.Estoque</td>
-                                <td>
-                                    <a href="/produto/update/@produto.Id" class="btn btn-xs btn-default">
-                                        <span class="glyphicon glyphicon-edit"></span> Editar
-                                    </a>
-                                    <a href="/produto/delete/@produto.Id" class="btn btn-xs btn-danger">
-                                        <span class="glyphicon glyphicon-trash"></span> Apagar
-                                    </a>
-                                    <a href="/dashboard/adicionar/@produto.Id" class="btn btn-xs btn-success">
-                                        <span class="glyphicon glyphicon-trash"></span> Adcionar
-                                    </a>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
 
-            <div class="col-sm-3">
+                <h1 class="titulo-cliente">Produtos</h1>
 
-                <div class="xe-widget xe-counter" data-count=".num" data-from="0" data-to="99.9" data-suffix="%" data-duration="2">
-                    <div class="xe-icon">
-                        <i class="linecons-cloud"></i>
-                    </div>
-                    <div class="xe-label">
-                        <strong class="num">0.0%</strong>
-                        <span>Porcentagem de vendas</span>
-                    </div>
+                <div class="row">
+
+                    @foreach (var produto in Model)
+                    {
+
+
+
+                        <div class="col-xs-6">
+                            <div class="produto">
+                                <div class="row">
+                                    <div class="col-xs-12" title="@produto.Id">
+                                        <div class="produto-head">
+                                            <h1>@produto.Nome <small class="pull-right">R$ @produto.Preco</small> </h1>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <div class="produto-foto" style="background-image: url(@produto.Imagem);"></div>
+                                        <!--img src="@produto.Imagem" class="img-responsive"-->
+                                    </div>
+                                    <div class="col-xs-7 produto-descricao">
+
+
+                                        <p title="@produto.Categoria">@produto.Descricao</p>
+                                        <span title="@produto.Estoque">Tempo de entrega: @produto.TempoPreparo minutos</span>
+
+
+
+                                        <br />
+                                        <a href="/dashboard/adicionar/@produto.Id" class="btn btn-default btn-block">
+                                             Adicionar <span class="glyphicon glyphicon-plus"></span>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+                    }
+
                 </div>
 
+
+
+
+
+                
+
+                
+                
+                
+                
+                
             </div>
 
-            <div class="col-sm-3">
-
-                <div class="xe-widget xe-counter xe-counter-blue" data-count=".num" data-from="1" data-to="117" data-suffix="k" data-duration="3" data-easing="false">
-                    <div class="xe-icon">
-                        <i class="linecons-user"></i>
-                    </div>
-                    <div class="xe-label">
-                        <strong class="num">5</strong>
-                        <span>Clientes no estabelecimento</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-sm-3">
-
-                <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="1000" data-to="2470" data-duration="4" data-easing="true">
-                    <div class="xe-icon">
-                        <i class="linecons-camera"></i>
-                    </div>
-                    <div class="xe-label">
-                        <strong class="num">65</strong>
-                        <span>Visitantes no dia de hoje</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-sm-3">
-
-                <div class="xe-widget xe-counter xe-counter-red" data-count=".num" data-from="0" data-to="57" data-prefix="-," data-suffix="%" data-duration="5" data-easing="true" data-delay="1">
-                    <div class="xe-icon">
-                        <i class="linecons-lightbulb"></i>
-                    </div>
-                    <div class="xe-label">
-                        <strong class="num">-,0%</strong>
-                        <span>Pedidos cancelados</span>
-                    </div>
-                </div>
-
-            </div>
-
+            
             <div style="display:none">
 
                 <div class="col-sm-3">

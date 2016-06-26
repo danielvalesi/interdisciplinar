@@ -10,17 +10,9 @@
         <div class="panel-heading">
             <h3 class="panel-title">
                 FUNCIONÁRIOS
-                <a href="/funcionario/create" class="btn btn-success">CADASTRAR</a>
+                
             </h3>
-            <div class="panel-options">
-                <a href="#" data-toggle="panel">
-                    <span class="collapse-icon">&ndash;</span>
-                    <span class="expand-icon">+</span>
-                </a>
-                <a href="#" data-toggle="remove">
-                    &times;
-                </a>
-            </div>
+            <a href="/funcionario/create" class="btn btn-success pull-right">CADASTRAR</a>
         </div>
         <div class="panel-body">
             <script type="text/javascript">
@@ -56,10 +48,10 @@
                             <td>@funcionario.HorarioEntrada</td>
                             <td>@funcionario.HorarioSaida</td>
                             <td>
-                                <a href="/funcionario/update/@funcionario.Id" class="btn btn-xs btn-default">
+                                <a href="/funcionario/update/@funcionario.Id" class="btn btn-info">
                                     <span class="glyphicon glyphicon-edit"></span> Editar
                                 </a>
-                                <a href="/funcionario/delete/@funcionario.Id" class="btn btn-xs btn-danger">
+                                <a href="/funcionario/delete/@funcionario.Id" class="btn btn-danger">
                                     <span class="glyphicon glyphicon-trash"></span> Apagar
                                 </a>
                             </td>

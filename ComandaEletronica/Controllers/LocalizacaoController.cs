@@ -81,6 +81,7 @@ namespace ComandaEletronica.Controllers
             e.Numero = int.Parse(form["numero"]);
 
 
+
             using (LocalizacaoModel model = new LocalizacaoModel())
             {
                 model.Update(e);

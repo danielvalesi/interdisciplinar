@@ -9,19 +9,13 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">
-                LOCALIZAÇÕES
-                <a href="/localizacao/create" class="btn btn-success">CADASTRAR</a>
+                LOCALIZAÇÕES / MESAS
+                
             </h3>
+            
+            <a href="/localizacao/create" class="btn btn-success pull-right">CADASTRAR</a>
 
-            <div class="panel-options">
-                <a href="#" data-toggle="panel">
-                    <span class="collapse-icon">&ndash;</span>
-                    <span class="expand-icon">+</span>
-                </a>
-                <a href="#" data-toggle="remove">
-                    &times;
-                </a>
-            </div>
+
         </div>
         <div class="panel-body">
 
@@ -56,10 +50,10 @@
                             <td>@localizacao.Descricao</td>
                             <td>@localizacao.Status</td>
                             <td>
-                                <a href="/localizacao/update/@localizacao.Numero" class="btn btn-xs btn-default">
+                                <a href="/localizacao/update/@localizacao.Numero" class="btn btn-info">
                                     <span class="glyphicon glyphicon-edit"></span> Editar
                                 </a>
-                                <a href="/localizacao/delete/@localizacao.Numero" class="btn btn-xs btn-danger">
+                                <a href="/localizacao/delete/@localizacao.Numero" class="btn btn-danger">
                                     <span class="glyphicon glyphicon-trash"></span> Apagar
                                 </a>
                             </td>

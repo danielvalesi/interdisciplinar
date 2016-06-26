@@ -39,7 +39,7 @@
 
         
     </head>
-    <body>
+    <body id="cliente">
 
 
         <body class="page-body">
@@ -206,8 +206,8 @@
                             <!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
                             <li>
                                 <a href="/dashboard/index">
-                                    <i class="fa fa-dashboard"></i>
-                                    <span class="title">Dashboard</span>
+                                    <i class="linecons-cog"></i>
+                                    <span class="title">LANCHES</span>
                                 </a>
                                 <!--ul>
                                     <li>
@@ -245,7 +245,7 @@
                             </li>
                             <li>
                                 <a href="/produto/index">
-                                    <i class="fa fa-circle"></i>
+                                    <i class="linecons-desktop"></i>
                                     <span class="title">Produtos</span>
                                 </a>
                                 <ul>
@@ -262,9 +262,63 @@
                                 </ul>
                             </li>
                             <li>
+                                <a href="/pedido/index">
+                                    <i class="linecons-desktop"></i>
+                                    <span class="title">Pedidos</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="/pedido/index">
+                                            <span class="title">Listar</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/pedido/create">
+                                            <span class="title">Cadastrar</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/item/index">
+                                    <i class="linecons-desktop"></i>
+                                    <span class="title">Itens</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="/item/index">
+                                            <span class="title">Listar</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/item/create">
+                                            <span class="title">Cadastrar</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/conta/index">
+                                    <i class="linecons-desktop"></i>
+                                    <span class="title">Contas</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="/conta/index">
+                                            <span class="title">Listar</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/conta/create">
+                                            <span class="title">Cadastrar</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
                                 <a href="/localizacao/index">
-                                    <i class="fa fa-circle"></i>
-                                    <span class="title">Mesas</span>
+                                    <i class="linecons-desktop"></i>
+                                    <span class="title">Localização</span>
                                 </a>
                                 <ul>
                                     <li>
@@ -281,7 +335,7 @@
                             </li>
                             <li>
                                 <a href="/funcionario/index">
-                                    <i class="fa fa-circle"></i>
+                                    <i class="linecons-note"></i>
                                     <span class="title">Funcionários</span>
                                 </a>
                                 <ul>
@@ -300,9 +354,9 @@
 
                             <li>
                                 <a href="/cliente/index">
-                                    <i class="fa fa-circle"></i>
+                                    <i class="linecons-mail"></i>
                                     <span class="title">Clientes</span>
-                                    
+                                    <span class="label label-success pull-right">5</span>
                                 </a>
                                 <ul>
                                     <li>
@@ -317,63 +371,6 @@
                                     </li>
                                 </ul>
                             </li>
-                             <li>
-                                <a href="/conta/index">
-                                    <i class="fa fa-circle"></i>
-                                    <span class="title">Contas</span>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="/conta/index">
-                                            <span class="title">Listar</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/conta/create">
-                                            <span class="title">Cadastrar</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="/pedido/index">
-                                    <i class="fa fa-circle"></i>
-                                    <span class="title">Pedidos</span>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="/pedido/index">
-                                            <span class="title">Listar</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/pedido/create">
-                                            <span class="title">Cadastrar</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="/item/index">
-                                    <i class="fa fa-circle"></i>
-                                    <span class="title">Itens</span>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="/item/index">
-                                            <span class="title">Listar</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/item/create">
-                                            <span class="title">Cadastrar</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                           
-                            
-                            
                             
                             
                             <!--li>
@@ -998,6 +995,50 @@
                             </li-->
 
                             <!-- Added in v1.2 -->
+
+                            <li class="dropdown user-profile">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="~/assets/images/user-4.png" alt="user-image" class="img-circle img-inline userpic-32" width="28" />
+                                    <span>
+                                        @(((Pessoa)Session["pessoa"]).Nome)
+                                        
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu user-profile-menu list-unstyled">
+                                    <li>
+                                        <a href="#edit-profile">
+                                            <i class="fa-edit"></i>
+                                            Meus Pedidos
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#settings">
+                                            <i class="fa-wrench"></i>
+                                            Configurações
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#profile">
+                                            <i class="fa-user"></i>
+                                            Minha Conta
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#help">
+                                            <i class="fa-info"></i>
+                                            Ajuda
+                                        </a>
+                                    </li>
+                                    <li class="last">
+                                        <a href="/cliente/index">
+                                            <i class="fa-lock"></i>
+                                            Sair
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
                             <li class="dropdown hover-line language-switcher">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="~/assets/images/flags/flag-br.png" alt="flag-br"/>
@@ -1018,6 +1059,7 @@
                                         </a>
                                     </li>
                                     
+                                    
 
                                 </ul>
                             </li>
@@ -1027,61 +1069,29 @@
 
                         <!-- Right links for user info navbar -->
                         <ul class="user-info-menu right-links list-inline list-unstyled">
-                            <li class="search-form">
-                                <!-- You can add "always-visible" to show make the search input visible -->
+                            
 
-                                <form name="userinfo_search_form" method="get" action="extra-search.html">
-                                    <input type="text" name="s" class="form-control search-field" placeholder="Type to search..."/>
+                           
+                                    <li>
+                                        <a href="/dashboard/finalizar" class="btn btn-lg btn-success finaliza-pedido">
+                                            <span class="glyphicon glyphicon-check"></span> FINALIZAR PEDIDO
+                                        </a>
 
-                                    <button type="submit" class="btn btn-link">
-                                        <i class="linecons-search"></i>
-                                    </button>
-                                </form>
-
-                            </li>
-
-                            <li class="dropdown user-profile">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="~/assets/images/user-4.png" alt="user-image" class="img-circle img-inline userpic-32" width="28"/>
-                                    <span>
-                                        @(((Pessoa) Session["pessoa"]).Nome)
-                                        <i class="fa-angle-down"></i>
-                                    </span>
+                                    </li>
+                                    <li>
+                                        <a href="/dashboard/finalizarConta" class="btn btn-lg btn-success finaliza-conta">
+                                            <i class="fa fa-hand-o-up" aria-hidden="true"></i> FECHAR CONTA
+                                        </a>
+                                    </li>
+                            <li>
+                                <a href="/cliente/index">
+                                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                    Sair
                                 </a>
-
-                                <ul class="dropdown-menu user-profile-menu list-unstyled">
-                                    <li>
-                                        <a href="#edit-profile">
-                                            <i class="fa-edit"></i>
-                                            New Post
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#settings">
-                                            <i class="fa-wrench"></i>
-                                            Settings
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#profile">
-                                            <i class="fa-user"></i>
-                                            Profile
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#help">
-                                            <i class="fa-info"></i>
-                                            Help
-                                        </a>
-                                    </li>
-                                    <li class="last">
-                                        <a href="/cliente/index">
-                                            <i class="fa-lock"></i>
-                                            Logout
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
+
+                          
+                            
 
                             <!--li>
                                 <a href="#" data-toggle="chat">
